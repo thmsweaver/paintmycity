@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'sessions#new'
+  root 'welcome#index'
 
   resources :users, except: [:index]
   resources :sessions, only: [:create]
