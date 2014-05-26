@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  resources :users, except: [:index] do
+  resources :users, except: [:index, :new] do
     resources :compositions, shallow: true
   end
 
