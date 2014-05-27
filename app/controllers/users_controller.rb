@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     end
   end
 
-  private
+private
 
   # grabs user id from params to find the correct user
   def find_user

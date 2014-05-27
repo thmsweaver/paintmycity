@@ -1,0 +1,6 @@
+<h1>collection by <%= @user.name %>:</h1>
+<% @compositions.each do |piece| %>
+  <ul>
+    <li><%= link_to piece.title, composition_path(piece) %></li>
+  </ul>
+<% end %>

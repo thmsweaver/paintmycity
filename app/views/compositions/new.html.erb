@@ -1,0 +1,8 @@
+<h1>add to your collection:</h1>
+
+<!--how does the below work?-->
+<% flash.each do |name, msg| %>
+  <%= content_tag :p, msg, class: name %>
+
+<% end %>
+<%= render 'composition_form' %>
