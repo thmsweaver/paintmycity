@@ -4,7 +4,8 @@ class CompositionsController < ApplicationController
   before_action :load_composition, only: [:destroy]
 
   def index
-    @compositions = Composition.all
+    @compositions = @user.compositions.all
+    @json = @compositions.to_gmaps4rails
   end
 
   def new
@@ -17,7 +18,7 @@ class CompositionsController < ApplicationController
         redirect_to user_compositions_path(@user)
   # question: why does this not work - users_path(@user)?
       else
-        flash[:error] = 'please complete the form before saving'
+        flash[:error] = 'please complete the form before submitting'
         render :new
       end
   end
