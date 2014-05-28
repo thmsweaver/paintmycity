@@ -7,11 +7,11 @@ Rails.application.routes.draw do
   root 'sessions#new'
 
   resources :users, except: [:index, :new] do
-    resources :compositions, shallow: true
+    resources :compositions
   end
 
   resources :sessions, only: [:create]
-  resources :compositions, only: [:index]
+  #resources :compositions, only: [:index]
 
   get '/signup' => 'users#new'
   get '/signin' => 'sessions#new'

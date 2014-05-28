@@ -14,4 +14,6 @@ class Composition < ActiveRecord::Base
     numericality: { greater_than_or_equal_to: -180, less_than_or_equal_to: 180 }
     #format: { with: /^(-?(?:1[0-7]|[1-9])?\d(?:\.\d{1,6})?|180(?:\.0{1,6})?)$/ }
 
+    acts_as_gmappable :process_geocoding => false
+
 end

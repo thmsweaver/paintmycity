@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use postgresql as the database for Active Record
@@ -46,4 +45,7 @@ group :development, :test do
   gem 'launchy'
   gem 'factory_girl_rails'
   gem 'ffaker'
+  # gem 'protected_attributes'
+  # gem 'geocoder'
+  gem 'gmaps4rails', '~> 1.5.6'
 end

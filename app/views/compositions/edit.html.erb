@@ -1,0 +1,7 @@
+<h1>edit your piece:</h1>
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :p, msg, class: name %>
+
+<% end %>
+<%= render 'composition_form' %>
