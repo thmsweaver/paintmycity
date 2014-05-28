@@ -3,6 +3,11 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
   before_action :require_current_user, except: [:new, :create]
 
+  # index user artwork
+  def index
+    @compositions = Composition.all
+  end
+
   # feed the user new view a blank user
   def new
     @user = User.new

@@ -1,6 +1,7 @@
 class CompositionsController < ApplicationController
   before_action :find_user
   before_action :find_composition, only: [:show, :edit, :update]
+  before_action :load_composition, only: [:destroy]
 
   def index
     @compositions = Composition.all
@@ -11,8 +12,8 @@ class CompositionsController < ApplicationController
   end
 
   def create
-    @composition = Composition.new(composition_params)
-      if @composition.save
+    composition = @user.compositions.build(composition_params)
+      if composition.save
         redirect_to user_compositions_path(@user)
   # question: why does this not work - users_path(@user)?
       else
@@ -36,6 +37,11 @@ class CompositionsController < ApplicationController
     end
   end
 
+  def destroy
+    @composition.destroy
+    redirect_to user_compositions_path
+  end
+
 private
 
   def find_user
@@ -53,6 +59,10 @@ private
       :longitude,
       :image_url
     )
+  end
+
+  def load_composition
+    return @composition = Composition.find_by(id: params[:id])
   end
 
 end

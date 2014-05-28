@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # question: switched this from welcome index to make site shallower?
   root 'sessions#new'
 
-  resources :users, except: [:index, :new] do
+  resources :users, except: [:new] do
     resources :compositions
   end
 
