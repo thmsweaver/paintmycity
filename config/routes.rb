@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   end
 
   resources :sessions, only: [:create]
+
   #resources :compositions, only: [:index]
+
+  get '/map' => 'pages#index'
+  get '/votes' => 'pages#votes'
 
   get '/signup' => 'users#new'
   get '/signin' => 'sessions#new'

@@ -10,6 +10,25 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require gmaps4rails.css
  */
+
+body {
+  background-image: url(http://designprintwin.com/wp-content/uploads/2014/02/concrete2.jpg);
+  background-size: cover;
+}
+
+.page {
+  width: 830px;
+  border: 5px solid red;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.gmap {
+  border: 1px solid blue;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}

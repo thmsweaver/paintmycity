@@ -4,7 +4,8 @@
     <li><%= link_to piece.title, user_composition_path(@user, piece) %></li>
   </ul>
 <% end %>
+<p><%= link_to "home", user_path(@user) %></p>
 
- <div id="gmap">
+ <div class="gmap">
     <%= gmaps4rails(@json) %>
-  </div>
+</div>

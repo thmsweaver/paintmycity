@@ -5,7 +5,9 @@ class CompositionsController < ApplicationController
 
   def index
     @compositions = @user.compositions.all
-    @json = @compositions.to_gmaps4rails
+    @json = @compositions.to_gmaps4rails do |composition, marker|
+      marker.infowindow render_to_string(:partial => "/compositions/infowindow", :locals => {composition: composition})
+    end
   end
 
   def new
@@ -58,7 +60,8 @@ private
       :title,
       :latitude,
       :longitude,
-      :image_url
+      :image_url,
+      :description
     )
   end
 
