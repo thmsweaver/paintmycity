@@ -7,16 +7,16 @@ Rails.application.routes.draw do
   root 'sessions#new'
 
   resources :users, except: [:new] do
-    resources :compositions
+    resources :compositions do
+      resources :comments, :only => [:new, :create, :destroy]
+    end
   end
 
   resources :sessions, only: [:create]
 
-  #resources :compositions, only: [:index]
-
   get '/map' => 'pages#index'
   get '/votes' => 'pages#votes'
-
+  #post 'signin' => 'sessions#create'
   get '/signup' => 'users#new'
   get '/signin' => 'sessions#new'
   delete '/signout' => 'sessions#destroy'

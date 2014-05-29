@@ -1,11 +1,11 @@
 <h1><%= @composition.title %></h1>
 
-<% if signed_in? %>
+<% if @user == @composition.user %>
   <%= form_for [@user, @composition], method: 'delete' do |f| %>
     <%= f.submit "remove composition", id: "destroy" %>
   <% end %>
 <% end %>
 
 <div id="gmap">
-    <%= gmaps4rails(@json) %>
+  <%= gmaps4rails(@json) %>
 </div>
