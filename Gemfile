@@ -50,3 +50,5 @@ group :development, :test do
   # gem 'geocoder'
   gem 'gmaps4rails', '~> 1.5.6'
 end
+
+ruby "2.1.1"
