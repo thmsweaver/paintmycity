@@ -1,3 +1,4 @@
+<div class="content">
 <h1><%= @composition.title %></h1>
 
 <% if @user == @composition.user %>
@@ -6,6 +7,28 @@
   <% end %>
 <% end %>
 
-<div id="gmap">
+<div class="comments ">
+    <p><u>comments:</u></p>
+    <div class="composition-comments">
+    <% comments = Comment.where(:composition_id => @composition.id).order('updated_at DESC').limit(5) %>
+    <% comments.each do |comment| %>
+    <%= comment.entry %>
+    <div class="comment-info"> -
+      <%= comment.user.email %> -
+      <%= time_ago_in_words(comment.updated_at) %> ago
+    </div><br>
+    <% end %>
+    <!--TODO if session[:id] -->
+    <% if current_user %>
+    <%= form_for [@user, @composition, @comment] do |f| %>
+    <%= f.text_area :entry, size: "40x10" %>
+    <%= f.submit "comment" %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+</div>
+
+<div class="gmap">
   <%= gmaps4rails(@json) %>
 </div>

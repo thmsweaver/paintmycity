@@ -27,6 +27,7 @@ class CompositionsController < ApplicationController
 
   def show
     @json = @composition.to_gmaps4rails
+    @comment = Comment.new
   end
 
   def edit

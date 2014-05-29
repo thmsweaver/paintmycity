@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :users, except: [:new] do
     resources :compositions do
-      resources :comments, :only => [:new, :create, :destroy]
+      resources :comments
     end
   end
 
