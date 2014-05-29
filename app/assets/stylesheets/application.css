@@ -28,7 +28,6 @@ body {
 
 .gmap {
   border: 1px solid blue;
-  margin: 0 auto;
-  padding: 0;
+  margin: 0;
   text-align: center;
 }

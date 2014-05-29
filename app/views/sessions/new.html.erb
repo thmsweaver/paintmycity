@@ -9,7 +9,7 @@
 <% end %>
 
 <div class="form">
-  <%= form_for :session, url: sessions_path do |f| %>
+  <%= form_for :session,:html => { :style => 'background-color:red' }, url: sessions_path do |f| %>
 
     <%= f.text_field :email, :placeholder => "email" %>
     <%= f.password_field :password, :placeholder => "password" %>

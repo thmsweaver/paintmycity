@@ -1,9 +1,5 @@
 <h1>collection by <%= @user.name %>:</h1>
-<% @user.compositions.each do |piece| %>
-  <ul>
-    <li><%= link_to piece.title, user_composition_path(@user, piece) %></li>
-  </ul>
-<% end %>
+
 <p><%= link_to "home", user_path(@user) %></p>
 
  <div class="gmap">
