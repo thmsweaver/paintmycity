@@ -1,3 +1,11 @@
-<h1><%= @user.name %></h1>
+<div class="usershow_container">
 
+  <div class="profile">
+    <p><%= @user.profile %></p>
+  </div>
 
+  <div class="static_profile">
+    <h1><%= @user.name %></h1>
+    <img src="<%= @user.profile_picture %>" class="profile_picture">
+  </div>
+</div>

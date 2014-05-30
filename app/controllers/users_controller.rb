@@ -53,7 +53,8 @@ private
       :name,
       :email,
       :password,
-      :password_confirmation
+      :password_confirmation,
+      :profile_picture
     )
   end
 

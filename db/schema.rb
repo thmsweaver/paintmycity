@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140529161323) do
+ActiveRecord::Schema.define(version: 20140530030319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,8 +31,7 @@ ActiveRecord::Schema.define(version: 20140529161323) do
     t.integer "user_id"
     t.text    "image_url"
     t.boolean "gmaps"
-    t.string  "location",    default: "Washington, DC"
-    t.text    "description"
+    t.string  "location",  default: "Washington, DC"
   end
 
   create_table "users", force: true do |t|
@@ -40,6 +39,8 @@ ActiveRecord::Schema.define(version: 20140529161323) do
     t.string "email"
     t.string "password_digest"
     t.string "remember_token"
+    t.text   "profile_picture", default: "http://www.clker.com/cliparts/4/p/3/I/V/d/large-man-woman-bathroom-sign.svg"
+    t.text   "profile",         default: "graffiti is one of the few tools you have if you have almost nothing. And even if you don't come up with a picture to cure world poverty you can make someone smile while they're having a piss."
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -1,19 +1,15 @@
-<%= form_for [@user, @composition] do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-
-  <%= f.label :latitude %>
-  <%= f.number_field :latitude, :step => 'any' %>
-
-  <%= f.label :longitude %>
-  <%= f.number_field :longitude, :step => 'any' %>
-
-  <%= f.label :image_url %>
-  <%= f.text_field :image_url %>
-
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-
-  <%= f.submit "Submit", id: 'submit' %>
-  <%= link_to "cancel", user_path(@user) %>
-<% end %>
+<div class="uploadform_container">
+  <div class="upload_form">
+    <%= form_for [@user, @composition] do |f| %>
+      <%= f.text_field :title, placeholder: 'title', class: 'uploadform_field' %>
+      <%= f.hidden_field :user_id, value: @user.id %>
+      <%= f.number_field :latitude, step: 'any', placeholder: 'latitude', class: 'uploadform_field'    %>
+      <%= f.number_field :longitude, step: 'any', placeholder: 'longitude', class: 'uploadform_field' %>
+      <%= f.text_field :image_url, placeholder: 'image url', class: 'uploadform_field' %>
+      <!--chand area to field-->
+      <!--%= f.text_field :description, placeholder: 'description', size: '20x10' %-->
+      <%= f.submit 'Submit', id: 'submit' %>
+    <% end %>
+    <%= link_to "cancel", user_path(@user) %>
+   </div>
+</div>

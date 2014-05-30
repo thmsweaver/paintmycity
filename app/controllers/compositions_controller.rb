@@ -15,12 +15,11 @@ class CompositionsController < ApplicationController
   end
 
   def create
-    composition = @user.compositions.build(composition_params)
-      if composition.save
+    @composition = @user.compositions.build(composition_params)
+      if @composition.save
         redirect_to user_compositions_path(@user)
-  # question: why does this not work - users_path(@user)?
       else
-        flash[:error] = 'please complete the form before submitting'
+        flash[:error] = "please complete the form"
         render :new
       end
   end
@@ -28,6 +27,7 @@ class CompositionsController < ApplicationController
   def show
     @json = @composition.to_gmaps4rails
     @comment = Comment.new
+    @comments = Comment.where(composition_id: @composition.id).order('updated_at DESC').limit(5)
   end
 
   def edit
@@ -62,7 +62,8 @@ private
       :latitude,
       :longitude,
       :image_url,
-      :description
+      :description,
+      :user_id
     )
   end
 

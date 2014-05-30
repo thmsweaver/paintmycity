@@ -1,7 +1,18 @@
-<h1>collection by <%= @user.name %>:</h1>
+<div class="compositionindex_container">
+
+  <div class="gmap">
+    <%= gmaps4rails(@json) %>
+  </div>
+
+  <div class="static_profile">
+    <h1><%= @user.name %>'s gallery:</h1>
+    <img src="<%= @user.profile_picture %>" class="profile_picture">
+</div>
+
+
+
 
 <p><%= link_to "home", user_path(@user) %></p>
 
- <div class="gmap">
-    <%= gmaps4rails(@json) %>
+
 </div>

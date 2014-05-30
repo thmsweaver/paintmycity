@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # user can have many compositions that should be destroyed with user
   has_many :compositions, dependent: :destroy
   has_many :comments
-  has_many :compositions, :through => :comments
+  has_many :comments, :through => :compositions
 
   # add handlers to run when creating and saving:
   before_create :create_remember_token

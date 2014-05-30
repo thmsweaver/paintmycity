@@ -6,11 +6,8 @@ class CommentsController < ApplicationController
     @comment.entry = params[:comment][:entry]
     @comment.composition = @composition
     @comment.user = current_user
-    if @comment.save
-      flash[:notice] = "Comment added"
-    else
-      flash[:alert] = "Comment not created."
-    end
+    @comment.save
     redirect_to user_composition_path(current_user, @composition)
   end
+
 end

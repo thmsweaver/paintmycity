@@ -2,19 +2,22 @@
   <%= stylesheet_link_tag "homepage" %>
 <% end %>
 
-<h1>paint my city</h1>
-
 <% flash.each do |name, msg| %>
   <%= content_tag :p, msg, class: name %>
 <% end %>
 
 <div class="form">
-  <%= form_for :session,:html => { :style => 'background-color:red' }, url: sessions_path do |f| %>
+  <%= form_for :session, url: sessions_path do |f| %>
 
-    <%= f.text_field :email, :placeholder => "email" %>
-    <%= f.password_field :password, :placeholder => "password" %>
+    <%= f.text_field :email, placeholder: "email", class: "signin_field" %>
+    <%= f.password_field :password, placeholder: "password", class: "signin_field" %>
 
-    <%= f.submit 'Sign in', id: 'signin' %>
+    <%= f.submit 'sign in', id: 'signin', class: "signin_button" %>
 
   <% end %>
+
+  <h1>paint my city</h1>
+  <p>decentralizing the art gallery</p>
+
 </div>
+

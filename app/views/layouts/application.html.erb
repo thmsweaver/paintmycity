@@ -4,10 +4,10 @@
   <title>Paintmycity</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= yield(:css_includes) if content_for?(:css_includes) %>
-  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= javascript_include_tag 'application' %>
   <div class="page">
 
 <!--%= link_to "Home", root_path %-->
