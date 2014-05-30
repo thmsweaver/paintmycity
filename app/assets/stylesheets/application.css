@@ -157,3 +157,19 @@ body {
   margin-left: 50px;
 }
 
+.comment_block {
+  width: 400px;
+  background-color: rgba(255,255,255,0.4);
+  padding: 5px;
+}
+
+.comment_block p {
+  padding: 3px;
+  margin: 0;
+  margin-left: 10px;
+}
+
+.pages_container {
+  width: 1290px;
+  margin: 0 auto;
+}

@@ -20,13 +20,12 @@
     <div class="composition-comments">
       <% @comments.each do |comment| %>
       <div class="comment_block">
-        <%= comment.entry %>
-        <div class="comment-info"> *
-          <%= comment.user.email %> *
-          <%= time_ago_in_words(comment.updated_at) %> ago
-        </div><br>
-      <% end %>
+        <p><%= comment.entry %></p>
+        <p> * <%= comment.user.email %> * <%= time_ago_in_words(comment.updated_at) %> ago</p>
+        <br>
       </div>
+      <% end %>
+
 
       <% if current_user %>
         <%= form_for [@user, @composition, @comment] do |f| %>

@@ -1,3 +1,10 @@
-<div class="gmap">
-    <%= gmaps4rails(@json) %>
+<div class="pages_container">
+  <div class="gmap">
+      <%= gmaps4rails(@json) %>
+  </div>
+
+  <div class="static_profile">
+      <h1>get out there <%= current_user.name %>:</h1>
+      <img src="<%= current_user.profile_picture %>" class="profile_picture">
+  </div>
 </div>
